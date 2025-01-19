@@ -1,4 +1,5 @@
 import { Server } from "@hapi/hapi"
+import { defineItemRoutes } from "./items/router"
 
 export const defineRoutes = (server: Server) => {
     server.route({
@@ -9,5 +10,7 @@ export const defineRoutes = (server: Server) => {
                 ok: true
             }
         }
-    })  
+    })
+
+    defineItemRoutes(server)
 }
