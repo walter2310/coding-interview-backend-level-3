@@ -1,3 +1,33 @@
+# Requisitos para Correr el Servidor
+
+Para ejecutar el servidor localmente, se debe de cumplir con los siguientes requisitos:
+
+- **Node.js**: Asegúrate de tener Node.js instalado. La versión utilizada en este proyecto es la 20.12.2.
+- **Docker**: Es necesario tener Docker instalado para levantar los contenedores del proyecto.
+- **Contenedores Docker necesarios**:
+  - PostgreSQL: `docker pull postgres:15.3`
+  - pgAdmin 4 (opcional): `docker pull dpage/pgadmin4`
+
+# Pasos para Inicializar el Proyecto
+
+1. **Instalar dependencias:**
+    ```sh
+    npm install
+    ```
+
+2. **Levantar contenedores Docker:**
+    ```sh
+    cd .devcontainer
+    docker compose up -d
+    ```
+
+3. **Reemplazar las creedenciales por las suyas propias en el .env:**
+
+4. **Sincronizar la base de datos con el schema propuesto:**
+    ```sh
+    npx prisma migrate dev --name init
+    ```
+
 # Bienvenido al coding-interview-backend-level-3 - Parte I
 
 ## Descripción

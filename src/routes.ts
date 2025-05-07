@@ -1,13 +1,14 @@
-import { Server } from "@hapi/hapi"
+import { Server } from '@hapi/hapi';
+import { defineItemRoutes } from './api/items/routes';
 
 export const defineRoutes = (server: Server) => {
+    // Health check endpoint
     server.route({
         method: 'GET',
         path: '/ping',
-        handler: async (request, h) => {
-            return {
-                ok: true
-            }
-        }
-    })  
-}
+        handler: () => ({ ok: true })
+    });
+
+    // Item routes
+    defineItemRoutes(server);
+};
